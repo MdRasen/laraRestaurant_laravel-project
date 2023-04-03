@@ -14,9 +14,9 @@
                     <h5 class="mb-0">Full Name</h5>
                     <small>Designation</small>
                     <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -28,9 +28,9 @@
                     <h5 class="mb-0">Full Name</h5>
                     <small>Designation</small>
                     <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -42,9 +42,9 @@
                     <h5 class="mb-0">Full Name</h5>
                     <small>Designation</small>
                     <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -56,9 +56,9 @@
                     <h5 class="mb-0">Full Name</h5>
                     <small>Designation</small>
                     <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
