@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\publicController;
 use App\Http\Controllers\admin\aboutController;
+use App\Http\Controllers\admin\serviceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,16 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/view-about', 'viewAbout')->name('admin.view-about');
         Route::get('/edit-about', 'editAbout')->name('admin.edit-about');
         Route::post('/edit-about', 'editAboutSubmit')->name('admin.edit-about');
+    });
+
+    // Service Control
+    Route::controller(serviceController::class)->group(function () {
+        Route::get('/add-service', 'addService')->name('admin.add-service');
+        Route::post('/add-service', 'addServiceSubmit')->name('admin.add-service');
+        Route::get('/view-service', 'viewService')->name('admin.view-service');
+        Route::get('/edit-service/{service_id}', 'editService')->name('admin.edit-service');
+        Route::post('/edit-service/{service_id}', 'editServiceSubmit')->name('admin.edit-service');
+        Route::post('/delete-service', 'deleteService')->name('admin.delete-service');
     });
 });
 

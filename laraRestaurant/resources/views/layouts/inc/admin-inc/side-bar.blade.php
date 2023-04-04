@@ -44,8 +44,8 @@
         <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="#">Add Service</a>
-                <a class="collapse-item" href="#">View Service</a>
+                <a class="collapse-item" href="{{ route('admin.add-service') }}">Add Service</a>
+                <a class="collapse-item" href="{{ route('admin.view-service') }}">View Service</a>
             </div>
         </div>
     </li>
