@@ -29,7 +29,7 @@
 
     <!-- Nav Item - About -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('admin.view-about') }}">
             <i class="fas fa-fw fa-user"></i>
             <span>About</span></a>
     </li>

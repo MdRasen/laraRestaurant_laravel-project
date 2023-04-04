@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\publicController;
+use App\Http\Controllers\admin\aboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,17 @@ Route::get('/', [publicController::class, 'index'])->name('index');
 
 // Admin Routes
 Route::prefix('admin')->middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [adminController::class, 'index'])->name('admin.dashboard');
+    // Admin Control
+    Route::controller(adminController::class)->group(function () {
+        Route::get('/dashboard', 'index')->name('admin.dashboard');
+    });
+
+    // About Control
+    Route::controller(aboutController::class)->group(function () {
+        Route::get('/view-about', 'viewAbout')->name('admin.view-about');
+        Route::get('/edit-about', 'editAbout')->name('admin.edit-about');
+        Route::post('/edit-about', 'editAboutSubmit')->name('admin.edit-about');
+    });
 });
 
 
