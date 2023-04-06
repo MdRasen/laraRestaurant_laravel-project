@@ -47,6 +47,3 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::post('/delete-service', 'deleteService')->name('admin.delete-service');
     });
 });
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
