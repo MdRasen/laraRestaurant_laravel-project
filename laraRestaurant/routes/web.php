@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\publicController;
+use App\Http\Controllers\admin\menuController;
 use App\Http\Controllers\admin\aboutController;
 use App\Http\Controllers\admin\serviceController;
 
@@ -45,5 +46,15 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/edit-service/{service_id}', 'editService')->name('admin.edit-service');
         Route::post('/edit-service/{service_id}', 'editServiceSubmit')->name('admin.edit-service');
         Route::post('/delete-service', 'deleteService')->name('admin.delete-service');
+    });
+
+    // Menu Control
+    Route::controller(menuController::class)->group(function () {
+        Route::get('/add-menu', 'addMenu')->name('admin.add-menu');
+        Route::post('/add-menu', 'addMenuSubmit')->name('admin.add-menu');
+        Route::get('/view-menu', 'viewMenu')->name('admin.view-menu');
+        Route::get('/edit-menu/{menu_id}', 'editMenu')->name('admin.edit-menu');
+        Route::post('/edit-menu/{menu_id}', 'editMenuSubmit')->name('admin.edit-menu');
+        Route::post('/delete-menu', 'deleteMenu')->name('admin.delete-menu');
     });
 });

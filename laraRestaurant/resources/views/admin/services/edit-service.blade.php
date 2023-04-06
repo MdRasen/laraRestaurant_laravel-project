@@ -67,7 +67,7 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-6">
-                                <button type="submit" class="btn btn-primary mr-2">Add Service</button>
+                                <button type="submit" class="btn btn-primary mr-2">Update Service</button>
                                 <a href="{{ route('admin.dashboard') }}" class="btn btn-light">Cancel</a>
                             </div>
                         </div>

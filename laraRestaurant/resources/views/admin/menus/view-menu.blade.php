@@ -1,10 +1,10 @@
 @extends('layouts.admin')
-@section('title', 'laraRestaurant - View Services')
+@section('title', 'laraRestaurant - View Menus')
 @section('content')
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">View Services</h1>
+        <h1 class="h3 mb-0 text-gray-800">View Menus</h1>
         <a href="{{ route('index') }}" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fa fa-solid fa-share text-white-50"></i> Live View</a>
     </div>
@@ -28,23 +28,25 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Icon Class</th>
-                                    <th>Short Description</th>
+                                    <th>Category</th>
+                                    <th style="width: 380px;">Short Description</th>
+                                    <th>Price</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            @foreach ($services as $item)
+                            @foreach ($menus as $item)
                                 <tr>
-                                    <td>{{ $item->service_name }}</td>
-                                    <td>{{ $item->icon_class }}</td>
+                                    <td>{{ $item->menu_name }}</td>
+                                    <td>{{ $item->category }}</td>
                                     <td>{{ $item->short_desc }}</td>
+                                    <td>{{ $item->price }}</td>
                                     <td>{{ $item->status }}</td>
                                     <td>
-                                        <a href="{{ route('admin.edit-service', ['service_id' => $item->id]) }}"
+                                        <a href="{{ route('admin.edit-menu', ['menu_id' => $item->id]) }}"
                                             class="btn btn-info btn-sm">Edit</a>
                                         <button type="button" value="{{ $item->id }}"
-                                            class="btn btn-danger btn-sm deleteServiceBtn">Delete</button>
+                                            class="btn btn-danger btn-sm deleteMenuBtn">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -57,11 +59,11 @@
     </div>
 
     <!-- Delete Modal-->
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="deleteModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="{{ route('admin.delete-service') }}" method="POST">
+                <form action="{{ route('admin.delete-menu') }}" method="POST">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete?</h5>
@@ -69,8 +71,8 @@
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
-                    <input type="hidden" id="service_id" name="service_id">
-                    <div class="modal-body">Select "Delete" below if you are ready to delete the service.</div>
+                    <input type="hidden" id="menu_id" name="menu_id">
+                    <div class="modal-body">Select "Delete" below if you are ready to delete the menu.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-primary">Delete</button>
@@ -84,11 +86,12 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
-            $(document).on("click", ".deleteServiceBtn", function(e) {
+            $(document).on("click", ".deleteMenuBtn", function(e) {
                 e.preventDefault();
-                var service_id = $(this).val();
-                $('#service_id').val(service_id);
-                $('#deleteModal').modal('show');
+                var menu_id = $(this).val();
+                console.log(menu_id);
+                $('#menu_id').val(menu_id);
+                $('#deleteModal2').modal('show');
             });
         });
     </script>
