@@ -1,10 +1,10 @@
 @extends('layouts.admin')
-@section('title', 'laraRestaurant - View Menus')
+@section('title', 'laraRestaurant - View Reservations')
 @section('content')
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">View Menus</h1>
+        <h1 class="h3 mb-0 text-gray-800">View Reservations</h1>
         <a href="{{ route('index') }}" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fa fa-solid fa-share text-white-50"></i> Live View</a>
     </div>
@@ -28,25 +28,27 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Category</th>
-                                    <th style="width: 380px;">Short Description</th>
-                                    <th>Price</th>
+                                    <th>Email</th>
+                                    <th>Time</th>
+                                    <th>Guest</th>
+                                    <th>Special Request</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            @foreach ($menus as $item)
+                            @foreach ($reservations as $item)
                                 <tr>
-                                    <td>{{ $item->menu_name }}</td>
-                                    <td>{{ $item->category }}</td>
-                                    <td>{{ $item->short_desc }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item->reservation_time }}</td>
+                                    <td>{{ $item->num_guest }}</td>
+                                    <td>{{ $item->special_req }}</td>
                                     <td>{{ $item->status }}</td>
                                     <td>
-                                        <a href="{{ route('admin.edit-menu', ['menu_id' => $item->id]) }}"
+                                        <a href="{{ route('admin.edit-reservation', ['reservation_id' => $item->id]) }}"
                                             class="btn btn-info btn-sm">Edit</a>
                                         <button type="button" value="{{ $item->id }}"
-                                            class="btn btn-danger btn-sm deleteMenuBtn">Delete</button>
+                                            class="btn btn-danger btn-sm deleteReservationBtn">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -59,11 +61,11 @@
     </div>
 
     <!-- Delete Modal-->
-    <div class="modal fade" id="deleteModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+    <div class="modal fade" id="deleteModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="{{ route('admin.delete-menu') }}" method="POST">
+                <form action="{{ route('admin.delete-reservation') }}" method="POST">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete?</h5>
@@ -71,8 +73,8 @@
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
-                    <input type="hidden" id="menu_id" name="menu_id">
-                    <div class="modal-body">Select "Delete" below if you are ready to delete the menu.</div>
+                    <input type="hidden" id="reservation_id" name="reservation_id">
+                    <div class="modal-body">Select "Delete" below if you are ready to delete the reservation.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-primary">Delete</button>
@@ -86,11 +88,11 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
-            $(document).on("click", ".deleteMenuBtn", function(e) {
+            $(document).on("click", ".deleteReservationBtn", function(e) {
                 e.preventDefault();
-                var menu_id = $(this).val();
-                $('#menu_id').val(menu_id);
-                $('#deleteModal2').modal('show');
+                var reservation_id = $(this).val();
+                $('#reservation_id').val(reservation_id);
+                $('#deleteModal3').modal('show');
             });
         });
     </script>

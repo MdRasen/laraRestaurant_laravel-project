@@ -17,7 +17,6 @@
                     <form action="#" method="POST">
                         @csrf
                         <div class="row form-group">
-                            <input type="hidden" value="{{ $service->id }}" name="service_id">
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Service Name</label>

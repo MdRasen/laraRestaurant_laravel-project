@@ -7,6 +7,7 @@ use App\Http\Controllers\publicController;
 use App\Http\Controllers\admin\menuController;
 use App\Http\Controllers\admin\aboutController;
 use App\Http\Controllers\admin\serviceController;
+use App\Http\Controllers\admin\reservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,5 +57,15 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/edit-menu/{menu_id}', 'editMenu')->name('admin.edit-menu');
         Route::post('/edit-menu/{menu_id}', 'editMenuSubmit')->name('admin.edit-menu');
         Route::post('/delete-menu', 'deleteMenu')->name('admin.delete-menu');
+    });
+
+    // Reservation Control
+    Route::controller(reservationController::class)->group(function () {
+        Route::get('/add-reservation', 'addReservation')->name('admin.add-reservation');
+        Route::post('/add-reservation', 'addReservationSubmit')->name('admin.add-reservation');
+        Route::get('/view-reservation', 'viewReservation')->name('admin.view-reservation');
+        Route::get('/edit-reservation/{reservation_id}', 'editReservation')->name('admin.edit-reservation');
+        Route::post('/edit-reservation/{reservation_id}', 'editReservationSubmit')->name('admin.edit-reservation');
+        Route::post('/delete-reservation', 'deleteReservation')->name('admin.delete-reservation');
     });
 });
