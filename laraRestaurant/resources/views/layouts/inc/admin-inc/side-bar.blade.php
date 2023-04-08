@@ -92,8 +92,8 @@
         <div id="collapse4" class="collapse" aria-labelledby="heading3" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="#">Add Team</a>
-                <a class="collapse-item" href="#">View Team</a>
+                <a class="collapse-item" href="{{ route('admin.add-team') }}">Add Team</a>
+                <a class="collapse-item" href="{{ route('admin.view-team') }}">View Team</a>
             </div>
         </div>
     </li>

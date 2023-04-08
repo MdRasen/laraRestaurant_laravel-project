@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\publicController;
 use App\Http\Controllers\admin\menuController;
+use App\Http\Controllers\admin\teamController;
 use App\Http\Controllers\admin\aboutController;
 use App\Http\Controllers\admin\serviceController;
 use App\Http\Controllers\admin\reservationController;
@@ -67,5 +68,15 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/edit-reservation/{reservation_id}', 'editReservation')->name('admin.edit-reservation');
         Route::post('/edit-reservation/{reservation_id}', 'editReservationSubmit')->name('admin.edit-reservation');
         Route::post('/delete-reservation', 'deleteReservation')->name('admin.delete-reservation');
+    });
+
+    // Team Control
+    Route::controller(teamController::class)->group(function () {
+        Route::get('/add-team', 'addTeam')->name('admin.add-team');
+        Route::post('/add-team', 'addTeamSubmit')->name('admin.add-team');
+        Route::get('/view-team', 'viewTeam')->name('admin.view-team');
+        Route::get('/edit-team/{team_id}', 'editTeam')->name('admin.edit-team');
+        Route::post('/edit-team/{team_id}', 'editTeamSubmit')->name('admin.edit-team');
+        Route::post('/delete-team', 'deleteTeam')->name('admin.delete-team');
     });
 });
