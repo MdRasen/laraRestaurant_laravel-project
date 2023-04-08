@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\teamController;
 use App\Http\Controllers\admin\aboutController;
 use App\Http\Controllers\admin\serviceController;
 use App\Http\Controllers\admin\reservationController;
+use App\Http\Controllers\admin\testimonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,5 +79,15 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/edit-team/{team_id}', 'editTeam')->name('admin.edit-team');
         Route::post('/edit-team/{team_id}', 'editTeamSubmit')->name('admin.edit-team');
         Route::post('/delete-team', 'deleteTeam')->name('admin.delete-team');
+    });
+
+    // Testimonial Control
+    Route::controller(testimonialController::class)->group(function () {
+        Route::get('/add-testimonial', 'addTestimonial')->name('admin.add-testimonial');
+        Route::post('/add-testimonial', 'addTestimonialSubmit')->name('admin.add-testimonial');
+        Route::get('/view-testimonial', 'viewTestimonial')->name('admin.view-testimonial');
+        Route::get('/edit-testimonial/{testimonial_id}', 'editTestimonial')->name('admin.edit-testimonial');
+        Route::post('/edit-testimonial/{testimonial_id}', 'editTestimonialSubmit')->name('admin.edit-testimonial');
+        Route::post('/delete-testimonial', 'deleteTestimonial')->name('admin.delete-testimonial');
     });
 });
