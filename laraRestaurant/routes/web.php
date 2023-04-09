@@ -7,6 +7,7 @@ use App\Http\Controllers\publicController;
 use App\Http\Controllers\admin\menuController;
 use App\Http\Controllers\admin\teamController;
 use App\Http\Controllers\admin\aboutController;
+use App\Http\Controllers\admin\contactController;
 use App\Http\Controllers\admin\serviceController;
 use App\Http\Controllers\admin\reservationController;
 use App\Http\Controllers\admin\testimonialController;
@@ -89,5 +90,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/edit-testimonial/{testimonial_id}', 'editTestimonial')->name('admin.edit-testimonial');
         Route::post('/edit-testimonial/{testimonial_id}', 'editTestimonialSubmit')->name('admin.edit-testimonial');
         Route::post('/delete-testimonial', 'deleteTestimonial')->name('admin.delete-testimonial');
+    });
+
+    // Contact Control
+    Route::controller(contactController::class)->group(function () {
+        Route::get('/view-contact', 'viewContact')->name('admin.view-contact');
+        Route::get('/edit-contact', 'editContact')->name('admin.edit-contact');
+        Route::post('/edit-contact', 'editContactSubmit')->name('admin.edit-contact');
     });
 });

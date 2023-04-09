@@ -19,7 +19,7 @@ class aboutController extends Controller
             $about->short_desc = "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet";
             $about->exp_years = "15";
             $about->team_members = "50";
-            $about->ad_video_link = "https://www.domain.com/video-link";
+            $about->ad_video_link = "https://www.youtube.com/video-link";
             $about->save();
         }
 

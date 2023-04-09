@@ -111,7 +111,7 @@
 
     <!-- Nav Item - Contact -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('admin.view-contact') }}">
             <i class="fas fa-fw fa-info"></i>
             <span>Contact</span></a>
     </li>
