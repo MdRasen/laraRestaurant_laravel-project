@@ -95,6 +95,8 @@
         </div>
     </div>
 
+    @yield('scripts')
+
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('admin-assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('admin-assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -118,8 +120,6 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('admin-assets/js/demo/datatables-demo.js') }}"></script>
-
-    @yield('scripts')
 
 </body>
 
