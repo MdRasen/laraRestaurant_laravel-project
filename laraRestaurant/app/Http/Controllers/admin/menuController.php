@@ -20,7 +20,8 @@ class menuController extends Controller
             [
                 "menu_name" => "required|string",
                 "category" => "required",
-                "short_desc" => "required|string|max:200",
+                "menu_image" => "required|mimes:jpg,png,jpeg",
+                "short_desc" => "required|string|max:100",
                 "price" => "required|numeric",
                 "status" => "required",
             ],
@@ -29,6 +30,12 @@ class menuController extends Controller
         $menu = new menu();
         $menu->menu_name = $req->menu_name;
         $menu->category = $req->category;
+
+        $extension = $req->file('menu_image')->getClientOriginalExtension();
+        $filename = time() . "." . $extension;
+        $req->file('menu_image')->storeAs('public/menu_images/', $filename);
+        $menu->menu_image = $filename;
+
         $menu->short_desc = $req->short_desc;
         $menu->price = $req->price;
         $menu->status = $req->status;
@@ -55,7 +62,8 @@ class menuController extends Controller
             [
                 "menu_name" => "required|string",
                 "category" => "required",
-                "short_desc" => "required|string|max:200",
+                "menu_image" => "mimes:jpg,png,jpeg",
+                "short_desc" => "required|string|max:100",
                 "price" => "required|numeric",
                 "status" => "required",
             ],
@@ -64,6 +72,21 @@ class menuController extends Controller
         $menu = menu::where('id', '=', $req->menu_id)->first();
         $menu->menu_name = $req->menu_name;
         $menu->category = $req->category;
+
+        if ($req->menu_image) {
+            if ($menu->menu_image) {
+                $destination = 'storage/menu_images/' . $menu->menu_image;
+                if (file_exists(public_path($destination))) {
+                    unlink($destination);
+                }
+            }
+
+            $extension = $req->file('menu_image')->getClientOriginalExtension();
+            $filename = time() . "." . $extension;
+            $req->file('menu_image')->storeAs('public/menu_images/', $filename);
+            $menu->menu_image = $filename;
+        }
+
         $menu->short_desc = $req->short_desc;
         $menu->price = $req->price;
         $menu->status = $req->status;
@@ -73,7 +96,15 @@ class menuController extends Controller
 
     public function deleteMenu(Request $req)
     {
-        $menu = menu::where('id', '=', $req->menu_id)->delete();
+        $menu = menu::where('id', '=', $req->menu_id)->first();
+        if ($menu->menu_image) {
+            $destination = 'storage/menu_images/' . $menu->menu_image;
+            if (file_exists(public_path($destination))) {
+                unlink($destination);
+            }
+        }
+        $menu->delete();
+
         return redirect('admin/view-menu')->with('msg1', 'Menu has been deleted successfully!');
     }
 }

@@ -82,7 +82,7 @@ class aboutController extends Controller
             }
 
             $extension = $req->file('image1')->getClientOriginalExtension();
-            $filename = time() . "." . $extension;
+            $filename = "image1" . time() . "." . $extension;
             $req->file('image1')->storeAs('public/about/', $filename);
             $about->image1 = $filename;
         }
@@ -96,7 +96,7 @@ class aboutController extends Controller
             }
 
             $extension = $req->file('image2')->getClientOriginalExtension();
-            $filename = time() . "." . $extension;
+            $filename = "image2" . time() . "." . $extension;
             $req->file('image2')->storeAs('public/about/', $filename);
             $about->image2 = $filename;
         }
@@ -111,7 +111,7 @@ class aboutController extends Controller
             }
 
             $extension = $req->file('image3')->getClientOriginalExtension();
-            $filename = time() . "." . $extension;
+            $filename = "image3" . time() . "." . $extension;
             $req->file('image3')->storeAs('public/about/', $filename);
             $about->image3 = $filename;
         }
@@ -126,7 +126,7 @@ class aboutController extends Controller
             }
 
             $extension = $req->file('image4')->getClientOriginalExtension();
-            $filename = time() . "." . $extension;
+            $filename = "image4" . time() . "." . $extension;
             $req->file('image4')->storeAs('public/about/', $filename);
             $about->image4 = $filename;
         }

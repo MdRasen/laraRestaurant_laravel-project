@@ -12,14 +12,24 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Wireless Road, Moghbazar, Dhaka: 1217</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@doamin.com</p>
+                <p class="mb-2"><i
+                        class="fa fa-map-marker-alt me-3"></i>{{ $contact ? $contact->address : 'Wireless Road, Moghbazar, Dhaka: 1217' }}
+                </p>
+                <p class="mb-2"><i
+                        class="fa fa-phone-alt me-3"></i>{{ $contact ? '+880 ' . $contact->phone : '+8801630406235' }}
+                </p>
+                <p class="mb-2"><i
+                        class="fa fa-envelope me-3"></i>{{ $contact ? $contact->email : 'info@doamin.com' }}
+                </p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank"
+                        href="{{ $contact ? $contact->twitter_link : '#' }}"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank"
+                        href="{{ $contact ? $contact->fb_link : '#' }}"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank"
+                        href="{{ $contact ? $contact->yt_link : '#' }}"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank"
+                        href="{{ $contact ? $contact->linkedin_link : '#' }}"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -39,7 +49,7 @@
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     &copy; 2023 <a href="#">laraResta</a>. All Right Reserved |
-                    Developed By <a href="https://www.facebook.com/itzAla71">MdRasen</a>
+                    Developed By <a href="https://www.facebook.com/itzAla71" target="_blank">MdRasen</a>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">

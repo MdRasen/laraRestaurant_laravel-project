@@ -26,7 +26,10 @@ use App\Http\Controllers\admin\testimonialController;
 Auth::routes();
 
 // Public Routes
-Route::get('/', [publicController::class, 'index'])->name('index');
+Route::controller(publicController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/reservation', 'reservationSubmit')->name('index.reservation');
+});
 
 // Admin Routes
 Route::prefix('admin')->middleware(['auth'])->group(function () {

@@ -103,7 +103,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                             aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
+                            <div class="dropdown-header">Manage Reservations:</div>
                             <a class="dropdown-item" href="{{ route('admin.add-reservation') }}">Add Reservation</a>
                             <a class="dropdown-item" href="{{ route('admin.view-reservation') }}">View Reservations</a>
                         </div>
@@ -131,7 +131,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                             aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
+                            <div class="dropdown-header">Manage Teams:</div>
                             <a class="dropdown-item" href="{{ route('admin.add-team') }}">Add Teams</a>
                             <a class="dropdown-item" href="{{ route('admin.view-team') }}">View Teams</a>
                         </div>

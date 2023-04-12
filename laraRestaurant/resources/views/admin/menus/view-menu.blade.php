@@ -29,6 +29,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Category</th>
+                                    <th>Image</th>
                                     <th style="width: 380px;">Short Description</th>
                                     <th>Price</th>
                                     <th>Status</th>
@@ -39,6 +40,11 @@
                                 <tr>
                                     <td>{{ $item->menu_name }}</td>
                                     <td>{{ $item->category }}</td>
+                                    <td>
+                                        <img class="img-fluid" width="60px"
+                                            src="{{ asset('storage/menu_images') }}/{{ $item->menu_image }}"
+                                            alt="menu image">
+                                    </td>
                                     <td>{{ $item->short_desc }}</td>
                                     <td>{{ $item->price }}</td>
                                     <td>{{ $item->status }}</td>

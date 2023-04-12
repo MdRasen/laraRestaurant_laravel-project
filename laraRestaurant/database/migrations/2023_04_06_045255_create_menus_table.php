@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('menu_name');
             $table->string('category');
+            $table->string('menu_image');
             $table->mediumText('short_desc');
             $table->integer('price');
             $table->string('status');

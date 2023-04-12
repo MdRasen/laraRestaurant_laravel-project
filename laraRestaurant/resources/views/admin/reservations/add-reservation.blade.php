@@ -24,7 +24,7 @@
                             </button>
                         </div>
                     @endif
-                    <form action="#" method="POST">
+                    <form action="" method="POST">
                         @csrf
                         <div class="row form-group">
                             <div class="col-sm-6">

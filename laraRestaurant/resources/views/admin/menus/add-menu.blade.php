@@ -24,10 +24,10 @@
                             </button>
                         </div>
                     @endif
-                    <form action="#" method="POST">
+                    <form action="#" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row form-group">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Menu Name</label>
                                     <input type="text" class="form-control" name="menu_name"
@@ -39,7 +39,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Category</label>
                                     <select class="form-control" name="category">
@@ -48,6 +48,18 @@
                                         <option value="Lunch">Lunch</option>
                                         <option value="Dinner">Dinner</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Menu Image</label>
+                                    <input type="file" class="form-control" name="menu_image"
+                                        value="{{ old('menu_image') }}">
+                                    <p style="color:red;">
+                                        @error('menu_image')
+                                            *{{ $message }}
+                                        @enderror
+                                    </p>
                                 </div>
                             </div>
                         </div>
