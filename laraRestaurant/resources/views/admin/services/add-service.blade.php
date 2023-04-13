@@ -14,6 +14,16 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                    {{-- Success Alert --}}
+                    @if (session('msg1'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Success!</strong> {{ session('msg1') }}
+                            <a class="btn btn-sm" href="{{ route('admin.view-service') }}">View Services</a>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
                     <form action="#" method="POST">
                         @csrf
                         <div class="row form-group">

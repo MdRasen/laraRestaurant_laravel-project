@@ -5,8 +5,8 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">View Menus</h1>
-        <a href="{{ route('index') }}" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fa fa-solid fa-share text-white-50"></i> Live View</a>
+        <a href="{{ route('admin.add-menu') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fa fa-solid fa-share text-white-50"></i> Add Menu</a>
     </div>
 
     <!-- Content Row -->
@@ -30,7 +30,7 @@
                                     <th>Name</th>
                                     <th>Category</th>
                                     <th>Image</th>
-                                    <th style="width: 380px;">Short Description</th>
+                                    <th style="width: 300px;">Short Description</th>
                                     <th>Price</th>
                                     <th>Status</th>
                                     <th>Action</th>

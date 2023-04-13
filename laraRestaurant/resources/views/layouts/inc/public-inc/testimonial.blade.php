@@ -6,7 +6,7 @@
             <h1 class="mb-5">Our Clients Say!!!</h1>
         </div>
         <div class="owl-carousel testimonial-carousel">
-            @if ($testimonials)
+            @if (count($testimonials) > 0)
                 @foreach ($testimonials as $item)
                     <div class="testimonial-item bg-transparent border rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>

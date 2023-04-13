@@ -32,7 +32,7 @@ class serviceController extends Controller
         $service->short_desc = $req->short_desc;
         $service->status = $req->status;
         $service->save();
-        return Redirect('admin/view-service')->with('msg1', 'Service has been created successfully!');
+        return Redirect('admin/add-service')->with('msg1', 'Service has been created successfully!');
     }
 
     public function viewService()

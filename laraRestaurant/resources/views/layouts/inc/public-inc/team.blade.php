@@ -6,7 +6,7 @@
             <h1 class="mb-5">Our Master Chefs</h1>
         </div>
         <div class="row g-4">
-            @if ($teams)
+            @if (count($teams) > 0)
                 @foreach ($teams as $item)
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item text-center rounded overflow-hidden">

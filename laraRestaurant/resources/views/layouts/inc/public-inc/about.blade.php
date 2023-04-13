@@ -5,7 +5,7 @@
             <div class="col-lg-6">
                 <div class="row g-3">
                     {{-- Image 01 --}}
-                    @if ($about->image1)
+                    @if ($about)
                         <div class="col-6 text-start">
                             <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s"
                                 src="{{ asset('storage/about/') }}/{{ $about->image1 }}" alt="about-1">
@@ -17,7 +17,7 @@
                         </div>
                     @endif
                     {{-- Image 02 --}}
-                    @if ($about->image2)
+                    @if ($about)
                         <div class="col-6 text-start">
                             <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s"
                                 src="{{ asset('storage/about/') }}/{{ $about->image2 }}" style="margin-top: 25%;"
@@ -31,7 +31,7 @@
                         </div>
                     @endif
                     {{-- Image 03 --}}
-                    @if ($about->image3)
+                    @if ($about)
                         <div class="col-6 text-end">
                             <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s"
                                 src="{{ asset('storage/about/') }}/{{ $about->image3 }}" alt="about-3">
@@ -43,7 +43,7 @@
                         </div>
                     @endif
                     {{-- Image 04 --}}
-                    @if ($about->image4)
+                    @if ($about)
                         <div class="col-6 text-end">
                             <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s"
                                 src="{{ asset('storage/about/') }}/{{ $about->image4 }}" alt="about-4">

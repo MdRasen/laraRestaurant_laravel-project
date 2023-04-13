@@ -19,7 +19,7 @@
                         class="fa fa-phone-alt me-3"></i>{{ $contact ? '+880 ' . $contact->phone : '+8801630406235' }}
                 </p>
                 <p class="mb-2"><i
-                        class="fa fa-envelope me-3"></i>{{ $contact ? $contact->email : 'info@doamin.com' }}
+                        class="fa fa-envelope me-3"></i>{{ $contact ? $contact->email : 'dev.mrasen@gmail.com' }}
                 </p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" target="_blank"

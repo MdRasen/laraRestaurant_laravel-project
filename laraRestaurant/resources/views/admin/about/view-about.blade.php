@@ -117,8 +117,7 @@
                         <div class="justify-content-center">
                             <a href="{{ route('admin.edit-about') }}" class="btn btn-primary mr-1">Edit
                                 About</a>
-                            <a href="#" class="btn btn-outline-primary">Change
-                                Password</a>
+                            <a href="{{ route('admin.dashboard') }}" class="btn btn-outline-primary">Go Back</a>
                         </div>
                     </div>
                 </div>

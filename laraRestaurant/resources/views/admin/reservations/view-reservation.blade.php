@@ -5,8 +5,8 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">View Reservations</h1>
-        <a href="{{ route('index') }}" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fa fa-solid fa-share text-white-50"></i> Live View</a>
+        <a href="{{ route('admin.add-reservation') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fa fa-solid fa-share text-white-50"></i> Add Reservation</a>
     </div>
 
     <!-- Content Row -->
@@ -27,10 +27,11 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Time</th>
-                                    <th>Guest</th>
+                                    <th style="width: 80px;">Time</th>
+                                    <th style="width: 20px;">Guest</th>
                                     <th>Special Request</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -38,6 +39,7 @@
                             </thead>
                             @foreach ($reservations as $item)
                                 <tr>
+                                    <th>{{ $item->id }}</th>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->reservation_time }}</td>

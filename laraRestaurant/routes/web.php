@@ -29,6 +29,9 @@ Auth::routes();
 Route::controller(publicController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/reservation', 'reservationSubmit')->name('index.reservation');
+
+    // To block custom registration - Redirect to landing page
+    Route::get('/register', 'index')->name('index');
 });
 
 // Admin Routes

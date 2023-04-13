@@ -2,7 +2,7 @@
 <div id="services" class="container-xxl py-5">
     <div class="container">
         <div class="row g-4">
-            @if ($services)
+            @if (count($services) > 0)
                 @foreach ($services as $item)
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item rounded pt-3">
